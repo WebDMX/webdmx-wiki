@@ -4,6 +4,9 @@ site_url: https://wiki.webdmx.com
 theme:
   name: material
   language: custom
+  custom_dir: overrides
+  logo: assets/logo.png
+  favicon: assets/favicon.png
 
   features:
     - navigation.instant
@@ -15,13 +18,13 @@ theme:
     - search.highlight
 
   palette:
-    - media: "(prefers-color-scheme: light)"
+    - media: "(prefers-color-scheme: dark)"
       scheme: default
       toggle:
         icon: material/weather-sunny
         name: Light mode
 
-    - media: "(prefers-color-scheme: dark)"
+    - media: "(prefers-color-scheme: light)"
       scheme: slate
       toggle:
         icon: material/weather-night
@@ -37,8 +40,25 @@ extra:
       link: /de/
       lang: de
 
+  homepage: https://webdmx.com
+
 plugins:
   - search:
       lang:
         - en
         - de
+
+  - i18n:
+      docs_structure: folder
+      fallback_to_default: false
+      reconfigure_material: true
+      reconfigure_search: true
+      languages:
+        - locale: en
+          name: English
+          default: true
+          build: true
+
+        - locale: de
+          name: Deutsch
+          build: true
